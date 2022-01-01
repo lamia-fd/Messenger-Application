@@ -14,6 +14,9 @@
 		5F694AE7277DC761007BF80A /* Messenger_Application.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F694AE5277DC761007BF80A /* Messenger_Application.xcdatamodeld */; };
 		5F694AE9277DC76A007BF80A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F694AE8277DC76A007BF80A /* Assets.xcassets */; };
 		5F694AEC277DC76A007BF80A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F694AEA277DC76A007BF80A /* LaunchScreen.storyboard */; };
+		5FA3AC9B27808EE300969E58 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3AC9A27808EE300969E58 /* RegisterViewController.swift */; };
+		5FA3AC9D27808F0100969E58 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3AC9C27808F0100969E58 /* NewConversationViewController.swift */; };
+		5FA3AC9F27808F2000969E58 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3AC9E27808F2000969E58 /* ProfileViewController.swift */; };
 		5FD6745B277E291000150D0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FD6745A277E291000150D0D /* GoogleService-Info.plist */; };
 		5FD6745E277E2A0E00150D0D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5FD6745D277E2A0E00150D0D /* FirebaseAnalytics */; };
 		5FD67460277E2A0E00150D0D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5FD6745F277E2A0E00150D0D /* FirebaseAuth */; };
@@ -31,6 +34,9 @@
 		5F694AE8277DC76A007BF80A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F694AEB277DC76A007BF80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F694AED277DC76A007BF80A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FA3AC9A27808EE300969E58 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5FA3AC9C27808F0100969E58 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
+		5FA3AC9E27808F2000969E58 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5FD6745A277E291000150D0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +83,9 @@
 				5F694AED277DC76A007BF80A /* Info.plist */,
 				5F694AE5277DC761007BF80A /* Messenger_Application.xcdatamodeld */,
 				5FD6745A277E291000150D0D /* GoogleService-Info.plist */,
+				5FA3AC9A27808EE300969E58 /* RegisterViewController.swift */,
+				5FA3AC9C27808F0100969E58 /* NewConversationViewController.swift */,
+				5FA3AC9E27808F2000969E58 /* ProfileViewController.swift */,
 			);
 			path = "Messenger Application";
 			sourceTree = "<group>";
@@ -162,8 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FA3AC9D27808F0100969E58 /* NewConversationViewController.swift in Sources */,
 				5F694AE1277DC761007BF80A /* LoginViewController.swift in Sources */,
+				5FA3AC9B27808EE300969E58 /* RegisterViewController.swift in Sources */,
 				5F694ADD277DC761007BF80A /* AppDelegate.swift in Sources */,
+				5FA3AC9F27808F2000969E58 /* ProfileViewController.swift in Sources */,
 				5F694AE7277DC761007BF80A /* Messenger_Application.xcdatamodeld in Sources */,
 				5F694ADF277DC761007BF80A /* SceneDelegate.swift in Sources */,
 			);

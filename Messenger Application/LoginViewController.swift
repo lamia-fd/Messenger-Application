@@ -7,14 +7,81 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var emailTextFiled: UITextField!
+    @IBOutlet weak var passwordTextFiled: UITextField!
+    @IBAction func signinBtn(_ sender: UIButton) {
+       
+        let signedIn=self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        navigationController?.pushViewController(signedIn, animated: true)
+    }
+    @IBAction func signInWithFaceBook(_ sender: UIButton) {
+        guard let email=emailTextFiled.text, !email.isEmpty,
+              let password=passwordTextFiled.text, !password.isEmpty else{
+                  print("line22")
+                  return
+              }
+        
+        print(email)
+        print(password)
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] result,error in
+            guard let strongSelf = self else{
+                print("line30")
+                return
+            }
+            guard error == nil else{
+                strongSelf.showAlartAcounNotExest()
+                print("line35")
+
+
+                
+                return
+            }
+            
+            print("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
+            let signedIn=self?.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+            self?.navigationController?.pushViewController(signedIn, animated: true)
+            
+            
+        })
+      
+        
+        
+        
+    }
+    
+    func showAlartAcounNotExest(){
+        let alert = UIAlertController(title: "Your account was not found", message: "Your account was not found. Please create a new account", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {_ in}))
+    }
+    
+    
+    @IBAction func goToSignUpPage(_ sender: UIButton) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        createUser(name: "lamia", age: 55)
+        passwordTextFiled.isSecureTextEntry=true
+        
+        if FirebaseAuth.Auth.auth().currentUser != nil {
+            
+            print("hiiiihhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhii")
+            do{
+           try FirebaseAuth.Auth.auth().signOut()
+            }catch{
+               print("hihihihihihihihihihihihihihi br")
+            }
+            let signedIn=self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+            navigationController?.pushViewController(signedIn, animated: true)
+            
+            
+        }
+
+       // createUser(name: "lamia", age: 55)
         
         
            }
