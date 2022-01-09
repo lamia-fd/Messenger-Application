@@ -6,24 +6,56 @@
 //
 
 import UIKit
+//import JGProgressHUD
 
-class NewConversationViewController: UIViewController {
 
+class NewConversationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text="hi"
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
+
+    private let tableView:UITableView={
+        let table=UITableView()
+        table.isHidden=true
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+      return table
+    }()
+    
+    private let noconversationLable: UILabel = {
+        let lable=UILabel()
+        lable.text="No Conversation"
+        lable.textAlignment = .center
+        lable.textColor = .gray
+        lable.font = .systemFont(ofSize: 21, weight: .medium)
+        lable.isHidden=true
+        return lable
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(tableView)
+        view.addSubview(noconversationLable)
 
+        tableView.delegate = self
+        tableView.dataSource = self
+        fachConversation()
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func fachConversation(){
+        
     }
-    */
 
 }
