@@ -6,24 +6,54 @@
 //
 
 import UIKit
+import MessageKit
 
-class chatViewController: UIViewController {
+struct Message: MessageType{
+    var sender: SenderType
+    var messageId: String
+    var sentDate: Date
+    var kind: MessageKind
+}
+struct Sender: SenderType{
+    var photoURL: String
+    var senderId: String
+    
+    var displayName: String
+    
+     
+}
+
+class chatViewController: MessagesViewController {
+    
+    private var messages = [Message]()
+    private let selfSender = Sender(photoURL: "", senderId: "1", displayName: "lamia")
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        messages.append(Message(sender: selfSender, messageId: "1", sentDate: Date(), kind: .text("Hi there")))
+        messages.append(Message(sender: selfSender, messageId: "1", sentDate: Date(), kind: .text("Hi there .........")))
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
 
-        // Do any additional setup after loading the view.
+        
     }
     
+ 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension chatViewController:MessagesDataSource,MessagesLayoutDelegate,MessagesDisplayDelegate{
+    func currentSender() -> SenderType {
+        return selfSender
     }
-    */
-
+    
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        messages[indexPath.section]
+    }
+    
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        messages.count
+    }
+    
+    
 }

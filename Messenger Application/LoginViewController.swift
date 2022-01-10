@@ -111,7 +111,7 @@ class LoginViewController: UIViewController {
        // createUser(name: "lamia", age: 55)
         
         facebookloginButton.center = view.center
-        facebookloginButton.frame = CGRect(x:55, y:passwordTextFiled.frame.minY-70, width:320, height:31)
+        facebookloginButton.frame = CGRect(x:51, y:passwordTextFiled.frame.maxY+76, width:220, height:31)
            }
            
            func createUser(name:String, age:Int) {
