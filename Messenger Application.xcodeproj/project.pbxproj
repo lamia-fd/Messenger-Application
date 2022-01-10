@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F47D148278B791C00718F4D /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5F47D147278B791C00718F4D /* MessageKit */; };
+		5F47D14A278B83AC00718F4D /* chatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47D149278B83AB00718F4D /* chatViewController.swift */; };
 		5F694ADD277DC761007BF80A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F694ADC277DC761007BF80A /* AppDelegate.swift */; };
 		5F694ADF277DC761007BF80A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F694ADE277DC761007BF80A /* SceneDelegate.swift */; };
 		5F694AE1277DC761007BF80A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F694AE0277DC761007BF80A /* LoginViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F47D149278B83AB00718F4D /* chatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
 		5F694AD9277DC761007BF80A /* Messenger Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Messenger Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F694ADC277DC761007BF80A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F694ADE277DC761007BF80A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				5FA3AC9C27808F0100969E58 /* NewConversationViewController.swift */,
 				5FA3AC9E27808F2000969E58 /* ProfileViewController.swift */,
 				5FE820542784258000345CB0 /* DatabaseManger.swift */,
+				5F47D149278B83AB00718F4D /* chatViewController.swift */,
 			);
 			path = "Messenger Application";
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				5FA3AC9D27808F0100969E58 /* NewConversationViewController.swift in Sources */,
 				5F694AE1277DC761007BF80A /* LoginViewController.swift in Sources */,
 				5FA3AC9B27808EE300969E58 /* RegisterViewController.swift in Sources */,
+				5F47D14A278B83AC00718F4D /* chatViewController.swift in Sources */,
 				5F694ADD277DC761007BF80A /* AppDelegate.swift in Sources */,
 				5FA3AC9F27808F2000969E58 /* ProfileViewController.swift in Sources */,
 				5F694AE7277DC761007BF80A /* Messenger_Application.xcdatamodeld in Sources */,

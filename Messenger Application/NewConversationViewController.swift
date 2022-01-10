@@ -16,11 +16,16 @@ class NewConversationViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text="hi"
+        cell.textLabel?.text="hi there"
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = chatViewController()
+        vc.title="the name"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+         
     }
     
 
@@ -44,18 +49,23 @@ class NewConversationViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         view.addSubview(tableView)
         view.addSubview(noconversationLable)
 
-        tableView.delegate = self
-        tableView.dataSource = self
+        
         fachConversation()
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidLayoutSubviews(){
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
 
     private func fachConversation(){
-        
+        tableView.isHidden=false
+        noconversationLable.isHidden=false
     }
 
 }
